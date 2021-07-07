@@ -1,4 +1,6 @@
 const { program } = require("commander");
+const chalk = require("chalk");
+const log = console.log;
 const createPassword = require("./utils/createPassword");
 
 program.version("1.0.0").description("Simple command line password generator");
@@ -14,4 +16,4 @@ const { length, save, numbers, symbols } = program.opts();
 
 const generatedPassword = createPassword(length, numbers, symbols);
 
-console.log(generatedPassword);
+log(chalk.blue("Generated password:", chalk.cyanBright.bold(generatedPassword)));
